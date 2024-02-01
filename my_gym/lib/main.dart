@@ -10,6 +10,11 @@ void main() {
     runApp(const MyApp(home: StateWidget()));
 }
 
+/// Main entry point for MyGym.
+///
+/// The entry point is an AgnosticStatelessWidget that contains a
+/// `home` field (A nulleable widget). This is done for easy debugging of custom
+/// screens and widgets.
 class MyApp extends AgnosticStatelessWidget {
     final Widget? home;
     const MyApp({this.home = const SplashScreen(), super.key});
