@@ -1,17 +1,26 @@
 import 'controller.dart';
-import 'package:flutter/material.dart';
+import 'package:my_gym/ios/splash.dart';
+import 'internals/startup.dart';
 import 'package:flutter/cupertino.dart';
 
-class SplashScreen extends AgnosticStatelessWidget {
+class SplashScreen extends AgnosticStatefulWidget{
     const SplashScreen({super.key});
 
     @override
-    Widget ios(BuildContext context) {
-        return const CupertinoPageScaffold(
-          child: Center(
-            child: CupertinoActivityIndicator()
-          ) 
-        );
-    }
-    
+    State<AgnosticStatefulWidget> createState() => SplashState();
 }
+
+class SplashState extends AgnosticState {
+    @override
+    void initState() {
+        super.initState();
+        // Load initial data + redirect to home screen
+        loadInitialState(context);
+    }
+
+    @override
+    Widget ios(BuildContext context) {
+        return const SplashScreenIOS();
+    }
+}
+

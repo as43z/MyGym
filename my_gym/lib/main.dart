@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-import 'shared/internals/platform.dart';
 import 'shared/controller.dart';
 import 'shared/splash_screen.dart';
-import 'shared/state_widget.dart';
 
 void main() {
     // Contextualizer.override(false);
-    runApp(const MyApp(home: StateWidget()));
+    runApp(const MyApp(home: SplashScreen()));
 }
 
 /// Main entry point for MyGym.
@@ -23,7 +21,7 @@ class MyApp extends AgnosticStatelessWidget {
     Widget ios(BuildContext context) {
         return CupertinoApp(
             title: 'MyGym',
-            theme: CupertinoThemeData(brightness: Brightness.light),
+            theme: const CupertinoThemeData(brightness: Brightness.light),
             home: home
         );
     }
